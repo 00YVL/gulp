@@ -6,7 +6,28 @@
     <title>all red.</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+    <style>
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.884);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 24px;
+            z-index: 9999;
+            cursor: pointer;
+            text-shadow: 0px 0px 16.5px #ffffffbe;
+        }
 
+        #overlay.hidden {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
