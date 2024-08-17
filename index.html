@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>all red.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+</head>
+    <audio id="background-music" loop>
+        <source src="assets/BACKR00MS.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <section class="hero">
+        <video autoplay loop muted playsinline class="back-video">
+            <source src="assets/Cartier.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <section class="content">
+            <h1>ALL RED</h1>
+            <a href="https://instagram.com/ranouttafent" target="_blank">ENTER</a>
+        </section>
+    </section>
+
+    <script>
+        // Show the popup when the page loads
+        window.onload = function() {
+            var popup = document.getElementById('music-popup');
+            var playButton = document.getElementById('play-music');
+            var audio = document.getElementById('background-music');
+
+            popup.style.display = 'block';
+
+            playButton.addEventListener('click', function() {
+                audio.play();
+                popup.style.display = 'none';
+            });
+        };
+    </script>
+</body>
+</html>
