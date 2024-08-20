@@ -6,6 +6,7 @@
     <title>all red. | xtc </title>
     <link rel="stylesheet" href="style.css">
     <link rel="Icon" href="https://files.catbox.moe/q8q2gs.png">
+
 </head>
 
 <body>
@@ -18,7 +19,7 @@
     </audio>
 
     <section class="hero">
-        <video id="back-video" loop muted playsinline class="back-video">
+        <video autoplay loop muted playsinline class="back-video">
             <source src="assets/2024.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -31,16 +32,11 @@
     <script>
         const audio = document.getElementById("background-music");
         const overlay = document.getElementById("overlay");
-        const video = document.getElementById("back-video");
 
         overlay.addEventListener("click", () => {
             overlay.classList.add("hidden");
+            audio.muted = false;
             audio.play();
-
-            // Ensure the video plays on mobile after user interaction
-            video.play().catch(error => {
-                console.error("Video failed to play automatically:", error);
-            });
         });
     </script>
 </body>
