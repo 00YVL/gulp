@@ -12,7 +12,7 @@
     <div id="overlay">
         Click to enter
     </div>
-    <audio id="background-music" loop muted>
+    <audio id="background-music" loop>
         <source src="assets/2024.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
@@ -35,13 +35,10 @@
 
         overlay.addEventListener("click", () => {
             overlay.classList.add("hidden");
-            audio.muted = false;
             audio.play();
-            // To ensure video plays on mobile, mute/unmute as needed
-            video.muted = true;  // Start with muted to satisfy autoplay policies
-            video.play().then(() => {
-                video.muted = false;  // Unmute after play starts
-            }).catch(error => {
+
+            // Ensure the video plays on mobile after user interaction
+            video.play().catch(error => {
                 console.error("Video failed to play automatically:", error);
             });
         });
