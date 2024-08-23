@@ -1,7 +1,7 @@
 /* Add this at the beginning of your CSS file */
 @font-face {
-    font-family: 'Scum';
-    src: url('font/scum.otf') format('opentype');
+    font-family: 'Gore';
+    src: url('font/Gore.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -10,7 +10,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'scum', sans-serif;
+    font-family: 'Gore', sans-serif;
 }
 
 body {
