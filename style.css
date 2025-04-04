@@ -1,119 +1,105 @@
-/* Add this at the beginning of your CSS file */
-@font-face {
-    font-family: 'Ken';
-    src: url('font/ken.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Ken', sans-serif;
-}
-
-body {
-    overflow-x: hidden;
-    background-color: #000;
-    color: white;
-}
-
-#overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 24px;
-    z-index: 9999;
-    cursor: pointer;
-    text-shadow: 0px 0px 16.5px #ffffffbe;
-}
-
-#overlay.hidden {
-    display: none;
-}
-
+/* General Window Styling */
 .window {
-    width: 400px;
-    height: 300px;
-    background-color: #f0f0f0;
-    border: 2px solid #000;
-    border-radius: 10px;
+    width: 300px;
+    background-color: #f1f1f1; /* Light gray background */
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 3px; /* Rounded corners */
+    font-family: 'Gore', sans-serif; /* Custom font */
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transform: translate(-50%, -50%); /* Center window */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow to mimic floating effect */
+    z-index: 9999;
 }
 
+/* Title Bar (Windows 7 Style) */
 .title-bar {
-    background: #2d2d2d; /* Dark gray background */
-    color: #fff;
-    padding: 8px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: #4d79ff; /* Windows 7 blue */
+    color: white;
+    padding: 6px 10px;
+    border-radius: 3px 3px 0 0; /* Rounded top corners */
     font-size: 14px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom: 2px solid #000;
-    cursor: move;
-}
-
-.title-bar-text {
-    font-size: 16px;
     font-weight: bold;
+    cursor: move; /* Draggable window */
 }
 
+/* Title Text */
+.title-bar-text {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+/* Title Bar Controls (Minimize, Maximize, Close) */
 .title-bar-controls button {
-    background: #444;
-    color: #fff;
+    background-color: #4d79ff;
     border: none;
-    padding: 5px 8px;
-    margin-left: 5px;
-    border-radius: 5px;
+    color: white;
+    padding: 4px;
     cursor: pointer;
 }
 
 .title-bar-controls button:hover {
-    background: #666;
+    background-color: #3366cc; /* Darker blue on hover */
 }
 
+/* Window Body */
 .window-body {
-    padding: 20px;
-    background: #fff;
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 0 0 3px 3px; /* Rounded bottom corners */
     text-align: center;
-    color: #333;
-    font-size: 14px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
 }
 
-.pfp img {
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    margin-top: 10px;
+/* Glowing Effect on ASCII */
+.gore pre {
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffffff, 0 0 40px #ffffff;
+    font-size: 18px;
+    padding: 10px;
+    margin: 0;
 }
 
-.socials a {
-    margin: 10px;
+/* Buttons in Window Body (Optional Custom Button Style) */
+.content a {
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    font-size: 4vw;
+    border: 2px solid white;
+    padding: 1em 3em;
+    margin-top: 20px;
+    transition: 0.5s;
 }
 
-#session {
-    margin-top: 10px;
+.content a:hover {
+    background: #fff;
+    color: black;
 }
 
-.socials {
-    margin-top: 15px;
+/* Close Button for the Window (Custom Close Button) */
+.title-bar-controls button:last-child {
+    content: '×'; /* Cross symbol for close button */
 }
 
-#social {
-    transition: all
+/* Cursor */
+.window {
+    cursor: move; /* Allow for dragging */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .window {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .window {
+        width: 90%;
+    }
+}
