@@ -17,24 +17,13 @@
         Your browser does not support the audio element.
     </audio>
 
-    <section class="hero">
-        <video id="back-video" loop muted playsinline preload="auto" class="back-video">
-            <source src="assets/core.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <section class="content">
-            <h1>GORECORE</h1>
-            <a href="https://open.spotify.com/artist/1mAwEGTxcOjFs4COQnYOZL" target="_blank">SPOTIFY</a>
-        </section>
-    </section>
-
     <div class="window" id="window">
         <div class="title-bar">
             <div class="title-bar-text">maison.py</div>
             <div class="title-bar-controls">
-                <button aria-label="Minimize"></button>
-                <button aria-label="Maximize"></button>
-                <button aria-label="Close"></button>
+                <button aria-label="Minimize" onclick="minimizeWindow()"></button>
+                <button aria-label="Maximize" onclick="maximizeWindow()"></button>
+                <button aria-label="Close" onclick="closeWindow()"></button>
             </div>
         </div>
         <div class="window-body">
@@ -104,6 +93,22 @@
             } else {
                 alert('Element with id "session" not found.');
             }
+        }
+
+        // Minimize, Maximize, and Close Window functions
+        function minimizeWindow() {
+            windowElement.style.display = 'none';
+        }
+
+        function maximizeWindow() {
+            windowElement.style.width = '100vw';
+            windowElement.style.height = '100vh';
+            windowElement.style.top = '0';
+            windowElement.style.left = '0';
+        }
+
+        function closeWindow() {
+            windowElement.style.display = 'none';
         }
     </script>
 </body>
