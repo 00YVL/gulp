@@ -1,7 +1,6 @@
-/* Add this at the beginning of your CSS file */
 @font-face {
     font-family: 'Gore';
-    src: url('font/Gore.otf') format('opentype');
+    src: url('font/gore.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -92,14 +91,53 @@ body {
     z-index: -1;
 }
 
-.home {
-    padding: 0 5%;
+.window {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.title-bar {
+    background: #222;
+    color: white;
+    padding: 8px 15px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    cursor: move;
+}
+
+.title-bar .title-bar-text {
+    font-weight: bold;
+}
+
+.window-body {
+    padding: 20px;
     text-align: center;
-    padding: 14px 50px;
-    margin-top: 20px;
+}
+
+.pfp img {
+    border-radius: 50%;
+}
+
+.socials a {
+    margin: 5px;
+    display: inline-block;
+}
+
+#social {
+    transition: all 0.3s ease;
+}
+
+#social:hover {
+    transform: scale(1.1);
 }
 
 @media (max-width: 1024px) {
