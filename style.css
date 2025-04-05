@@ -62,7 +62,7 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 999;
-    background-image: url('https://files.catbox.moe/k203bg.webp'); /* Catbox image URL */
+    background-image: url('imgs/morechaos.jpg'); /* Catbox image URL */
     background-size: cover;
     background-position: center;
     opacity: 0.5; /* Makes the background image semi-transparent */
