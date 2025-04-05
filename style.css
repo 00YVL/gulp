@@ -53,9 +53,6 @@ body {
 .window {
     width: 400px;
     background-color: rgba(44, 47, 54, 0.8); /* Semi-transparent background */
-    background-image: url('https://files.catbox.moe/k203bg.webp'); /* Catbox image URL */
-    background-size: cover;
-    background-position: center;
     border-radius: 10px;
     border: 2px solid #1c1f25;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
@@ -65,6 +62,10 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 999;
+    background-image: url('https://files.catbox.moe/k203bg.webp'); /* Catbox image URL */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5; /* Makes the background image semi-transparent */
 }
 
 .title-bar {
