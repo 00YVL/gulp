@@ -53,7 +53,7 @@
     </div>
 
     <script>
-        // Overlay click action to start music and show GIF
+        // Overlay click action to show GIFs and play music
         const audio = document.getElementById("background-music");
         const overlay = document.getElementById("overlay");
         const backgroundGif = document.getElementById("background-gif");
@@ -87,6 +87,10 @@
 
             // Start the GIF rotation
             changeBackgroundGif();
+
+            // Show corner banners
+            const cornerBanners = document.querySelectorAll('.corner-banner');
+            cornerBanners.forEach(banner => banner.classList.remove('hidden'));
         });
 
         // Make the window draggable
@@ -147,8 +151,4 @@
     </script>
 
     <img src="imgs/chaosbanner1.gif" class="corner-banner hidden" id="corner-top-left" />
-    <img src="imgs/chaosbanner2.gif" class="corner-banner hidden" id="corner-top-right" />
-    <img src="imgs/chaosbanner3.gif" class="corner-banner hidden" id="corner-bottom-left" />
-    <img src="imgs/chaosbanner4.gif" class="corner-banner hidden" id="corner-bottom-right" />
-</body>
-</html>
+    <img src="imgs/
