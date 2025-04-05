@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'ken';
-    src: url('fonts/ken.ttf');
+    src: url('ken.ttf');
 }
 
 body {
-    font-family: 'ken', sans-serif; /* Apply the 'ken' font to the whole site */
+    font-family: 'ken', sans-serif;
     margin: 0;
     padding: 0;
     background-color: black;
@@ -31,6 +31,23 @@ body {
 
 #overlay.hidden {
     display: none;
+}
+
+#background-gif {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .window {
@@ -62,11 +79,11 @@ body {
 }
 
 .title-bar-controls button {
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     margin: 0 5px;
     background-color: transparent;
-    border: none;
+    border: 1px solid #fff;
     cursor: pointer;
 }
 
@@ -78,6 +95,7 @@ body {
 .window-body {
     padding: 20px;
     text-align: center;
+    background-color: transparent;
 }
 
 .pfp img {
