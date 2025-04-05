@@ -79,7 +79,7 @@
             setTimeout(changeBackgroundGif, gifDuration);
         }
 
-        // Overlay click action to show GIFs and play music
+        // Overlay click action to show GIFs, play music, and show corner banners
         overlay.addEventListener("click", () => {
             overlay.classList.add("hidden");
             audio.play();
@@ -150,5 +150,10 @@
         }
     </script>
 
+    <!-- Corner Banners -->
     <img src="imgs/chaosbanner1.gif" class="corner-banner hidden" id="corner-top-left" />
-    <img src="imgs/
+    <img src="imgs/chaosbanner2.gif" class="corner-banner hidden" id="corner-top-right" />
+    <img src="imgs/chaosbanner3.gif" class="corner-banner hidden" id="corner-bottom-left" />
+    <img src="imgs/chaosbanner4.gif" class="corner-banner hidden" id="corner-bottom-right" />
+</body>
+</html>
