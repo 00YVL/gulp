@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gorecore | cult</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="Icon" href="https://files.catbox.moe/y2biio.jpg">
-</head>
-
 <body>
     <!-- Overlay to click to enter -->
     <div id="overlay">
@@ -52,108 +42,9 @@
         </div>
     </div>
 
-    <script>
-        // Overlay click action to show GIFs and play music
-        const audio = document.getElementById("background-music");
-        const overlay = document.getElementById("overlay");
-        const backgroundGif = document.getElementById("background-gif");
-        const gifBackground = document.getElementById("gif-background");
-
-        // List of GIFs
-        const gifList = [
-            "imgs/chaos.gif",
-            "imgs/chaos2.gif",
-            "imgs/chaos3.gif",
-            "imgs/chaos4.gif"
-        ];
-
-        let currentGifIndex = 0; // To track the current GIF
-        const gifDuration = 5000; // Duration for each GIF (adjust as needed)
-
-        // Function to change the GIF after one has finished
-        function changeBackgroundGif() {
-            currentGifIndex = (currentGifIndex + 1) % gifList.length;
-            gifBackground.src = gifList[currentGifIndex];
-
-            // Once the new GIF is loaded, we need to wait for its duration before switching again
-            setTimeout(changeBackgroundGif, gifDuration);
-        }
-
-        // Overlay click action to show GIFs, play music, and show corner banners
-        overlay.addEventListener("click", () => {
-            overlay.classList.add("hidden");
-            audio.play();
-            backgroundGif.classList.remove("hidden"); // Show the GIF
-
-            // Start the GIF rotation
-            changeBackgroundGif();
-
-            // Show corner banners
-            const cornerBanners = document.querySelectorAll('.corner-banner');
-            cornerBanners.forEach(banner => banner.classList.remove('hidden'));
-        });
-
-        // Make the window draggable
-        const windowElement = document.getElementById("window");
-        const titleBar = windowElement.querySelector(".title-bar");
-
-        titleBar.addEventListener("mousedown", (event) => {
-            const offsetX = event.clientX - windowElement.getBoundingClientRect().left;
-            const offsetY = event.clientY - windowElement.getBoundingClientRect().top;
-
-            function moveAt(pageX, pageY) {
-                windowElement.style.left = pageX - offsetX + "px";
-                windowElement.style.top = pageY - offsetY + "px";
-            }
-
-            function onMouseMove(event) {
-                moveAt(event.pageX, event.pageY);
-            }
-
-            document.addEventListener("mousemove", onMouseMove);
-            document.addEventListener("mouseup", () => {
-                document.removeEventListener("mousemove", onMouseMove);
-            });
-        });
-
-        // Copy business email to clipboard
-        function copyToClipboard() {
-            const email = "cult@gorecore.lol";  // Business email
-
-            const textArea = document.createElement('textarea');
-            textArea.value = email;
-            document.body.appendChild(textArea);
-            
-            textArea.select();
-            
-            document.execCommand('copy');
-            
-            document.body.removeChild(textArea);
-            
-            alert('Business email copied to clipboard: cult@gorecore.lol');
-        }
-
-        // Minimize, Maximize, and Close Window functions (no functionality)
-        function minimizeWindow() {
-            windowElement.style.display = 'none';
-        }
-
-        function maximizeWindow() {
-            windowElement.style.width = '100vw';
-            windowElement.style.height = '100vh';
-            windowElement.style.top = '0';
-            windowElement.style.left = '0';
-        }
-
-        function closeWindow() {
-            windowElement.style.display = 'none';
-        }
-    </script>
-
     <!-- Corner Banners -->
     <img src="imgs/chaosbanner1.gif" class="corner-banner hidden" id="corner-top-left" />
     <img src="imgs/chaosbanner2.gif" class="corner-banner hidden" id="corner-top-right" />
     <img src="imgs/chaosbanner3.gif" class="corner-banner hidden" id="corner-bottom-left" />
     <img src="imgs/chaosbanner4.gif" class="corner-banner hidden" id="corner-bottom-right" />
 </body>
-</html>
