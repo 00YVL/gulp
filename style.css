@@ -167,4 +167,33 @@ pre {
     backdrop-filter: blur(10px);
     background-color: black;
     height: 200px;
+} /* <-- this brace was missing */
+
+.corner-banner {
+    position: fixed;
+    width: 100px;
+    height: auto;
+    z-index: 10000;
+    pointer-events: none;
+}
+
+/* Corner placements */
+#corner-top-left {
+    top: 0;
+    left: 0;
+}
+
+#corner-top-right {
+    top: 0;
+    right: 0;
+}
+
+#corner-bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+#corner-bottom-right {
+    bottom: 0;
+    right: 0;
 }
