@@ -79,17 +79,40 @@ body {
 }
 
 .title-bar-controls button {
-    width: 15px;
-    height: 15px;
+    width: 30px;
+    height: 30px;
     margin: 0 5px;
     background-color: transparent;
     border: 1px solid #fff;
-    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    line-height: 30px;
+    cursor: default; /* No pointer action */
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
 }
 
 .title-bar-controls button:hover {
     background-color: #fff;
-    border-radius: 50%;
+    color: #000; /* Change text color when hovered */
+}
+
+.title-bar-controls button:focus {
+    outline: none; /* Remove focus outline */
+}
+
+.title-bar-controls button[aria-label="Minimize"] {
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.title-bar-controls button[aria-label="Maximize"] {
+    font-size: 20px;
+}
+
+.title-bar-controls button[aria-label="Close"] {
+    font-size: 20px;
 }
 
 .window-body {
