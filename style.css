@@ -55,6 +55,7 @@ body {
     justify-content: space-between;
     align-items: center;
     cursor: move;
+    user-select: none; /* To avoid text selection when dragging */
 }
 
 .title-bar-text {
@@ -62,11 +63,11 @@ body {
 }
 
 .title-bar-controls button {
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     margin: 0 5px;
     background-color: transparent;
-    border: none;
+    border: 1px solid #fff;
     cursor: pointer;
 }
 
@@ -78,6 +79,7 @@ body {
 .window-body {
     padding: 20px;
     text-align: center;
+    background-color: transparent;
 }
 
 .pfp img {
