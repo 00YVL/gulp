@@ -171,15 +171,21 @@ pre {
 
 .corner-banner {
     position: fixed;
-    width: 750px;
+    width: 150px;
     height: auto;
     z-index: 10000;
     pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
-.corner-banner.hidden {
-    display: none;
+
+#overlay:active ~ #corner-top-left,
+#overlay:active ~ #corner-top-right,
+#overlay:active ~ #corner-bottom-left,
+#overlay:active ~ #corner-bottom-right {
+    opacity: 1; /* Show corner banners after clicking */
 }
-/* Corner placements */
+
 #corner-top-left {
     top: 10px;
     left: 10px;
