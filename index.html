@@ -20,10 +20,15 @@
         Your browser does not support the audio element.
     </audio>
 
+    <!-- Background GIF -->
+    <div id="background-gif" class="hidden">
+        <img src="imgs/chaos.gif" alt="Background GIF" class="background-image">
+    </div>
+
     <!-- Windows 7 style movable window -->
     <div class="window" id="window">
         <div class="title-bar">
-            <div class="title-bar-text">gorecore.py</div> <!-- Changed title to gorecore.py -->
+            <div class="title-bar-text">gorecore.py</div>
             <div class="title-bar-controls">
                 <button aria-label="Minimize" onclick="minimizeWindow()"></button>
                 <button aria-label="Maximize" onclick="maximizeWindow()"></button>
@@ -31,30 +36,32 @@
             </div>
         </div>
         <div class="window-body">
-            <div id="email">Email: cult@gorecore.lol</div> <!-- Updated to show business email -->
+            <div id="email">Email: cult@gorecore.lol</div>
             <div class="pfp">
-                <img src="gore.jpg" width="100px"> <!-- Changed image to gore.jpg -->
+                <img src="gore.jpg" width="100px">
             </div>
-            <p>more x more chaos</p> <!-- Changed text as requested -->
+            <p>more x more chaos</p>
             <div class="socials">
-                <a target="_blank" href="https://discord.com/users/341482811708145664">
+                <a target="_blank" href="https://discord.com/users/1255620613826023586">
                     <img id="social" src="https://files.catbox.moe/rssiex.png" width="30px" draggable="false">
                 </a>
                 <a id="copy-trigger" class="copy-link" onclick="copyToClipboard(); return false;">
-                    <img id="social" src="imgs/gmail.png" width="30px" draggable="false" alt="Social Icon">
+                    <img id="social" src="imgs/session.png" width="30px" draggable="false" alt="Social Icon">
                 </a>
             </div>
         </div>
     </div>
 
     <script>
-        // Overlay click action to start music
+        // Overlay click action to start music and show GIF
         const audio = document.getElementById("background-music");
         const overlay = document.getElementById("overlay");
+        const backgroundGif = document.getElementById("background-gif");
 
         overlay.addEventListener("click", () => {
             overlay.classList.add("hidden");
             audio.play();
+            backgroundGif.classList.remove("hidden"); // Show the GIF
         });
 
         // Make the window draggable
