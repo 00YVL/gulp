@@ -52,7 +52,7 @@ body {
 
 .window {
     width: 400px;
-    background-color: #2c2f36; /* Opaque background for window */
+    background-color: #2c2f36; /* Normal window background */
     border-radius: 10px;
     border: 2px solid #1c1f25;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
@@ -62,9 +62,6 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 999;
-    background-image: url('imgs/morechaos.jpg'); /* Set the image here */
-    background-size: cover;
-    background-position: center;
     position: relative;
 }
 
@@ -75,11 +72,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('imgs/morechaos.jpg'); /* Set the image here */
+    background-image: url('imgs/morechaos.jpg'); /* Set the background image */
     background-size: cover;
     background-position: center;
-    opacity: 0.5; /* Only the background image is semi-transparent */
-    z-index: -1; /* Keep it behind the content */
+    opacity: 0.5; /* Low opacity for the background image */
+    z-index: -1; /* Keeps the image behind the content */
 }
 
 .title-bar {
