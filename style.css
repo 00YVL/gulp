@@ -4,7 +4,7 @@
     background-color: #f1f1f1; /* Light gray background */
     border: 1px solid #ccc; /* Gray border */
     border-radius: 3px; /* Rounded corners */
-    font-family: 'Gore', sans-serif; /* Custom font */
+    font-family: 'Ken', sans-serif; /* Custom font */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -21,7 +21,7 @@
     border-radius: 3px 3px 0 0; /* Rounded top corners */
     font-size: 14px;
     font-weight: bold;
-    cursor: move; /* Draggable window */
+    cursor: pointer; /* Allow hover effect */
 }
 
 /* Title Text */
@@ -37,10 +37,15 @@
     color: white;
     padding: 4px;
     cursor: pointer;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; /* Rounded buttons */
+    margin-left: 5px;
 }
 
 .title-bar-controls button:hover {
     background-color: #3366cc; /* Darker blue on hover */
+    transform: scale(1.2); /* Slight zoom effect on hover */
 }
 
 /* Window Body */
@@ -62,23 +67,6 @@
     font-size: 18px;
     padding: 10px;
     margin: 0;
-}
-
-/* Buttons in Window Body (Optional Custom Button Style) */
-.content a {
-    text-decoration: none;
-    display: inline-block;
-    color: #fff;
-    font-size: 4vw;
-    border: 2px solid white;
-    padding: 1em 3em;
-    margin-top: 20px;
-    transition: 0.5s;
-}
-
-.content a:hover {
-    background: #fff;
-    color: black;
 }
 
 /* Close Button for the Window (Custom Close Button) */
