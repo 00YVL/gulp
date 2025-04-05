@@ -57,12 +57,11 @@ body {
     border: 2px solid #1c1f25;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     overflow: hidden;
-    position: absolute;
-    left: 50%;
+    position: fixed;
     top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     z-index: 999;
-    position: relative;
 }
 
 .window::before {
