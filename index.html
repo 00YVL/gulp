@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gorecore | cult </title>
+    <title>gorecore | cult</title>
     <link rel="stylesheet" href="style.css">
     <link rel="Icon" href="https://files.catbox.moe/y2biio.jpg">
 </head>
 
 <body>
+    <!-- Overlay to click to enter -->
     <div id="overlay">
         Click to enter
     </div>
+
+    <!-- Background Music -->
     <audio id="background-music" loop>
-        <source src="assets/for you.mp3" type="audio/mpeg">
+        <source src="assets/for_you.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
+    <!-- Windows 7 style movable window -->
     <div class="window" id="window">
         <div class="title-bar">
-            <div class="title-bar-text">gorecore.mp4</div>
+            <div class="title-bar-text">gorecore.py</div> <!-- Changed title to gorecore.py -->
             <div class="title-bar-controls">
                 <button aria-label="Minimize" onclick="minimizeWindow()"></button>
                 <button aria-label="Maximize" onclick="maximizeWindow()"></button>
@@ -27,11 +31,13 @@
             </div>
         </div>
         <div class="window-body">
-            <div id="session">business email cult@gorecore.lol</div>
-            <div class="pfp"><img src="gore.jpg" width="100px"></div> <!-- Changed image to gore.jpg -->
-            <p>more x more chaos</p> <!-- Changed text -->
+            <div id="email">Email: cult@gorecore.lol</div> <!-- Updated to show business email -->
+            <div class="pfp">
+                <img src="gore.jpg" width="100px"> <!-- Changed image to gore.jpg -->
+            </div>
+            <p>more x more chaos</p> <!-- Changed text as requested -->
             <div class="socials">
-                <a target="_blank" href="https://discord.com/users/341482811708145664">
+                <a target="_blank" href="https://discord.com/users/1255620613826023586">
                     <img id="social" src="https://files.catbox.moe/rssiex.png" width="30px" draggable="false">
                 </a>
                 <a id="copy-trigger" class="copy-link" onclick="copyToClipboard(); return false;">
@@ -42,14 +48,13 @@
     </div>
 
     <script>
+        // Overlay click action to start music
         const audio = document.getElementById("background-music");
         const overlay = document.getElementById("overlay");
-        const video = document.getElementById("back-video");
 
         overlay.addEventListener("click", () => {
             overlay.classList.add("hidden");
             audio.play();
-            video.play(); // Start video playback after click
         });
 
         // Make the window draggable
@@ -75,24 +80,21 @@
             });
         });
 
+        // Copy business email to clipboard
         function copyToClipboard() {
-            const textElement = document.getElementById('session');
+            const email = "cult@gorecore.lol";  // Business email
+
+            const textArea = document.createElement('textarea');
+            textArea.value = email;
+            document.body.appendChild(textArea);
             
-            if (textElement) {
-                const textArea = document.createElement('textarea');
-                textArea.value = textElement.textContent || textElement.innerText;
-                document.body.appendChild(textArea);
-                
-                textArea.select();
-                
-                document.execCommand('copy');
-                
-                document.body.removeChild(textArea);
-                
-                alert('Session ID copied to clipboard.');
-            } else {
-                alert('Element with id "session" not found.');
-            }
+            textArea.select();
+            
+            document.execCommand('copy');
+            
+            document.body.removeChild(textArea);
+            
+            alert('Business email copied to clipboard: cult@gorecore.lol');
         }
 
         // Minimize, Maximize, and Close Window functions
