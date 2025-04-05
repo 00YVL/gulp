@@ -68,17 +68,15 @@
         ];
 
         let currentGifIndex = 0; // To track the current GIF
+        const gifDuration = 5000; // Duration for each GIF (adjust as needed)
 
         // Function to change the GIF after one has finished
         function changeBackgroundGif() {
             currentGifIndex = (currentGifIndex + 1) % gifList.length;
             gifBackground.src = gifList[currentGifIndex];
 
-            // Once the new GIF is loaded, we need to add an event listener to change the GIF again after it finishes
-            gifBackground.onload = () => {
-                // Wait until this gif is fully loaded, then continue
-                setTimeout(changeBackgroundGif, gifBackground.naturalDuration || 5000); // Fallback if no natural duration
-            };
+            // Once the new GIF is loaded, we need to wait for its duration before switching again
+            setTimeout(changeBackgroundGif, gifDuration);
         }
 
         // Overlay click action to show GIFs and play music
@@ -87,7 +85,7 @@
             audio.play();
             backgroundGif.classList.remove("hidden"); // Show the GIF
 
-            // Change GIF as it ends (starts immediately after the overlay is clicked)
+            // Start the GIF rotation
             changeBackgroundGif();
         });
 
