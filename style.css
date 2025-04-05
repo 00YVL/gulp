@@ -171,7 +171,7 @@ pre {
 
 .corner-banner {
     position: fixed;
-    width: 1500px;
+    width: 750px;
     height: auto;
     z-index: 10000;
     pointer-events: none;
@@ -181,21 +181,21 @@ pre {
 }
 /* Corner placements */
 #corner-top-left {
-    top: 0;
-    left: 0;
+    top: 10px;
+    left: 10px;
 }
 
 #corner-top-right {
-    top: 0;
-    right: 0;
+    top: 10px;
+    right: 10px;
 }
 
 #corner-bottom-left {
-    bottom: 0;
-    left: 0;
+    bottom: 10px;
+    left: 10px;
 }
 
 #corner-bottom-right {
-    bottom: 0;
-    right: 0;
+    bottom: 10px;
+    right: 10px;
 }
