@@ -176,7 +176,9 @@ pre {
     z-index: 10000;
     pointer-events: none;
 }
-
+.corner-banner.hidden {
+    display: none;
+}
 /* Corner placements */
 #corner-top-left {
     top: 0;
