@@ -22,7 +22,7 @@
 
     <!-- Background GIF -->
     <div id="background-gif" class="hidden">
-        <img src="imgs/chaos.gif" alt="Background GIF" class="background-image">
+        <img id="gif-background" src="imgs/chaos.gif" alt="Background GIF" class="background-image">
     </div>
 
     <!-- Windows 7 style movable window -->
@@ -42,11 +42,11 @@
             </div>
             <p>more x more chaos</p>
             <div class="socials">
-                <a target="_blank" href="https://open.spotify.com/artist/1mAwEGTxcOjFs4COQnYOZL">
-                    <img id="social" src="https://files.catbox.moe/jryg0y.png" width="30px" draggable="false">
+                <a target="_blank" href="https://discord.com/users/1255620613826023586">
+                    <img id="social" src="https://files.catbox.moe/rssiex.png" width="30px" draggable="false">
                 </a>
                 <a id="copy-trigger" class="copy-link" onclick="copyToClipboard(); return false;">
-                    <img id="social" src="imgs/gmail.png" width="30px" draggable="false" alt="Social Icon">
+                    <img id="social" src="imgs/session.png" width="30px" draggable="false" alt="Social Icon">
                 </a>
             </div>
         </div>
@@ -57,11 +57,38 @@
         const audio = document.getElementById("background-music");
         const overlay = document.getElementById("overlay");
         const backgroundGif = document.getElementById("background-gif");
+        const gifBackground = document.getElementById("gif-background");
 
+        // List of GIFs
+        const gifList = [
+            "imgs/chaos.gif",
+            "imgs/chaos2.gif",
+            "imgs/chaos3.gif",
+            "imgs/chaos4.gif"
+        ];
+
+        let currentGifIndex = 0; // To track the current GIF
+
+        // Function to change the GIF after one has finished
+        function changeBackgroundGif() {
+            currentGifIndex = (currentGifIndex + 1) % gifList.length;
+            gifBackground.src = gifList[currentGifIndex];
+
+            // Once the new GIF is loaded, we need to add an event listener to change the GIF again after it finishes
+            gifBackground.onload = () => {
+                // Wait until this gif is fully loaded, then continue
+                setTimeout(changeBackgroundGif, gifBackground.naturalDuration || 5000); // Fallback if no natural duration
+            };
+        }
+
+        // Overlay click action to show GIFs and play music
         overlay.addEventListener("click", () => {
             overlay.classList.add("hidden");
             audio.play();
             backgroundGif.classList.remove("hidden"); // Show the GIF
+
+            // Change GIF as it ends (starts immediately after the overlay is clicked)
+            changeBackgroundGif();
         });
 
         // Make the window draggable
